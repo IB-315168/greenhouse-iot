@@ -16,17 +16,19 @@ jobs:
         with:
           submodules: "recursive"
 
-      - name: Build
-        run: make
-
       - name: Initialize and Update Submodules
         run: |
           git submodule sync --recursive
           git submodule update --init --recursive
+
       - name: Make configure.sh executable
         run: chmod +x configure.sh
+
       - name: Configure
         run: ./configure.sh -c
+
+      - name: Build
+        run: make
 
       # - name: Generate release tag
       #   id: generate_release_tag
