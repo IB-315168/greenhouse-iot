@@ -23,7 +23,7 @@ jobs:
       #     tag_template: "i.i"
       - name: Generate release tag
         id: generate_release_tag
-        uses: ChloePlanet/github-tag-action@master
+        uses: anothrNick/github-tag-action@1.64.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
