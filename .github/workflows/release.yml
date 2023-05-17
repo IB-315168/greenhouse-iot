@@ -1,6 +1,9 @@
 on:
-  pull_request:
-    branches: ["master"]
+  push:
+    tags:
+      - "v.*"
+    branches:
+      - ["master"]
 
 name: Create Release
 
