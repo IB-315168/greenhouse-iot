@@ -13,6 +13,20 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+
+      - name: Build
+        run: make
+
+      - name: Initialize and Update Submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+      - name: Make configure.sh executable
+        run: chmod +x configure.sh
+      - name: Configure
+        run: ./configure.sh -c
 
       # - name: Generate release tag
       #   id: generate_release_tag
@@ -27,9 +41,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-
-      - name: Build
-        run: make
 
       - name: Create release
         uses: ncipollo/release-action@v1
