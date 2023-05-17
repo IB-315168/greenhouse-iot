@@ -32,4 +32,4 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.generate_release_tag.outputs.new_tag }}
-          artifacts: "release.tar.gz,foo/*.txt/*.hex"
+          artifacts: "release.tar.gz,foo/*.txt,*.hex"
