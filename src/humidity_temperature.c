@@ -4,7 +4,7 @@
 #ifndef TEST_ENV
 #include <util/delay.h>
 #else
-void _delay_ms(double) {}
+void _delay_ms(double delay) {}
 #endif
 
 #include "humidity_temperature.h"
