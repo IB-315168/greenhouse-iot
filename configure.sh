@@ -46,7 +46,7 @@ if [[ "$cli_mode" = true ]]; then
 fi
 
 # List of base packages to check for
-packages=("gcc-avr" "avr-libc" "make" "libgtest-dev")
+packages=("gcc-avr" "avr-libc" "make" "libgtest-dev" "gcovr")
 
 if [ "$cli_mode" = false ]; then
     # Add more packages in user mode
