@@ -29,11 +29,11 @@ function clean_up() {
 
 cd tests
 echo -n "Compiling tests and generating coverage notes... "
-make GEN_COV=true > /dev/null 2>&1
+make GEN_COV=true > /dev/null
 print_command_status
 
 echo -n "Running tests and generating coverage data... "
-./build/gtest_tests > /dev/null 2>&1
+./build/gtest_tests > /dev/null
 print_command_status
 
 echo -n "Generating coverage report in tests/coverage/... "
